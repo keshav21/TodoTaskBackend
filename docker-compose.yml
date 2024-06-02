@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  springbootapp:
+    image: openjdk:17-jdk-alpine
+    container_name: springbootapp
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./target:/app
+    working_dir: /app
+    command: ["java", "-jar", "todo-app-1.0.0-SNAPSHOT.jar"]

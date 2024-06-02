@@ -1,0 +1,25 @@
+spring:
+  security:
+    user:
+      name: admin
+      password: password
+  server:
+    port: 8080
+  datasource:
+    url: jdbc:postgresql://localhost:5432/todo_db
+    username: 'todo_user'
+    password: 'todopassword'
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: debug
+    root: info
