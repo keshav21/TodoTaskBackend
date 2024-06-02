@@ -1,0 +1,60 @@
+# Configuration for Spring Boot application
+
+# Configure CORS (Cross-Origin Resource Sharing) settings
+spring:
+  mvc:
+    cors:
+      # Allowed origins for CORS requests
+      allowed-origins: "*"
+      # Allowed HTTP methods for CORS requests
+      allowed-methods: "GET,POST,PUT,DELETE"
+      # Allowed headers for CORS requests
+      allowed-headers: "*"
+      # Allow credentials (e.g., cookies, authorization headers) for CORS requests
+      allow-credentials: true
+
+# Security configuration for user authentication
+security:
+  user:
+    # Default username for authentication
+    name: admin
+    # Default password for authentication
+    password: password
+
+# Configuration for the Spring Boot embedded web server
+server:
+  # Port on which the web server will listen
+  port: 5000
+
+# DataSource configuration for connecting to the database
+datasource:
+  # URL of the database
+  url: jdbc:postgresql://localhost:5432/todo_db
+  # Username for accessing the database
+  username: 'todo_user'
+  # Password for accessing the database
+  password: 'todopassword'
+  # Driver class name for the database
+  driver-class-name: org.postgresql.Driver
+
+# JPA (Java Persistence API) configuration for Hibernate
+jpa:
+  hibernate:
+    # Strategy for handling database schema updates
+    ddl-auto: update
+  properties:
+    hibernate:
+      # Dialect for the specific database
+      dialect: org.hibernate.dialect.PostgreSQLDialect
+      # Enable SQL statement formatting
+      format_sql: true
+
+# Logging configuration
+logging:
+  level:
+    # Logging level for Hibernate SQL statements
+    org:
+      hibernate:
+        SQL: debug
+    # Default logging level for the application
+    root: info
