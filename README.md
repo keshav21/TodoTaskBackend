@@ -107,7 +107,7 @@ Follow these steps to set up the PostgreSQL database for TodoTaskBackend:
     Run the following SQL command to create table in the database:
 
    ```sql
-  CREATE TABLE todo_item (
+    CREATE TABLE todo_item (
     id UUID PRIMARY KEY,
     title VARCHAR(255),
     description TEXT,
@@ -117,7 +117,7 @@ Follow these steps to set up the PostgreSQL database for TodoTaskBackend:
     recurring_type VARCHAR(50),
     canceled BOOLEAN,
     recurring BOOLEAN
-);
+     );
    ```
 
    
