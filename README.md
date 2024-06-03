@@ -11,6 +11,7 @@ This is the backend for the TodoTask application, built with [Java Spring Boot](
 - [Prerequisites](#prerequisites)
 - [Getting Started](#getting-started)
 - [Usage](#usage)
+- [Docker Deployment](#docker-deployment)
 - [License](#license)
 
 ## Introduction
@@ -68,7 +69,63 @@ To use TodoTaskBackend, you can interact with its RESTful API endpoints. Here ar
 - **POST /api/todo/cancel/{id}: Cancel a task by ID.
 - **DELETE /api/todo/delete/{id}: Delete a task by ID.
 
+Certainly! Here's how you could update the README.md file for your TodoTaskBackend repository to include Docker deployment and Kubernetes deployment steps:
 
+
+## Docker Deployment
+
+To deploy this application using Docker, follow these steps:
+
+1. Clone this repository:
+   ```
+git clone https://github.com/keshav21/TodoTaskBackend.git
+   ```
+
+2. Navigate to the cloned directory:
+   ```
+cd TodoTaskBackend
+   ```
+
+3. Build the Docker image:
+   ```
+docker build -t todo-task-backend .
+   ```
+
+4. Run the Docker container:
+   ```
+docker run -p 8080:8080 todo-task-backend
+   ```
+
+## Kubernetes Deployment
+
+To deploy this application on Kubernetes, follow these steps:
+
+1. Ensure you have a Kubernetes cluster set up and `kubectl` configured.
+
+2. Clone this repository:
+   ```
+git clone https://github.com/keshav21/TodoTaskBackend.git
+   ```
+
+3. Navigate to the cloned directory:
+   ```
+cd TodoTaskBackend
+   ```
+
+4. Apply the Kubernetes deployment and service YAML files:
+   ```
+kubectl apply -f deployment.yaml
+kubectl apply -f service.yaml
+   ```
+
+5. Apply the Kubernetes Ingress YAML file (if using Ingress):
+   ```
+kubectl apply -f ingress.yaml
+   ```
+
+6. Access the application using the appropriate URL.
+
+```
 ## License
 
 This project is licensed under the [MIT License](LICENSE).

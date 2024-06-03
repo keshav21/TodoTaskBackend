@@ -1,0 +1,52 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: todo-task-backend
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: todo-task-backend
+  template:
+    metadata:
+      labels:
+        app: todo-task-backend
+    spec:
+      containers:
+        - name: todo-task-backend
+          image: <your_image>:<tag> # Replace <your_image> and <tag> with your Docker image details
+          ports:
+            - containerPort: 8080
+---
+
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: todo-task-backend-service
+spec:
+  selector:
+    app: todo-task-backend
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
+---
+
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: todo-task-backend-ingress
+spec:
+  rules:
+    - host: yourdomain.com # Replace with your actual domain in AWS or Other Cloud
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: todo-task-backend-service
+                port:
+                  number: 80
