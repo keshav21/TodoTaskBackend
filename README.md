@@ -10,6 +10,7 @@ This is the backend for the TodoTask application, built with [Java Spring Boot](
 - [Features](#features)
 - [Prerequisites](#prerequisites)
 - [Getting Started](#getting-started)
+- [Database Setup](#database-setup)
 - [Usage](#usage)
 - [License](#license)
 
@@ -55,8 +56,85 @@ mvn clean package
 4. Run the application:
 
 ```bash
-java -jar target/TodoTaskBackend-1.0.0.jar
+java -jar target/todo-app-1.0.0-SNAPSHOT.jar
 ```
+
+## Database Setup
+
+Follow these steps to set up the PostgreSQL database for TodoTaskBackend:
+
+1. **Install PostgreSQL:**
+
+   Download and install PostgreSQL from the [official website](https://www.postgresql.org/download/). Follow the installation instructions for your operating system.
+
+2. **Start PostgreSQL Server:**
+
+   Start the PostgreSQL server. The default port is 5432.
+
+3. **Create Database:**
+
+   Open a terminal or command prompt and run the following command to access the PostgreSQL command-line interface:
+
+   ```sh
+   psql -U postgres
+   ```
+
+   Replace `postgres` with your PostgreSQL username if different.
+
+4. **Create Database:**
+
+   In the PostgreSQL command-line interface, run the following SQL command to create a new database named `todo_db`:
+
+   ```sql
+   CREATE DATABASE todo_db;
+   ```
+
+   You can choose a different name for the database if desired.
+
+5. **Create Database User:**
+
+   Run the following SQL command to create a new user named `todo_user` with password `todopassword` and grant access to the `todo_db` database:
+
+   ```sql
+   CREATE USER todo_user WITH PASSWORD 'todopassword';
+   GRANT ALL PRIVILEGES ON DATABASE todo_db TO todo_user;
+   ```
+
+   You can choose a different username and password if desired.
+   
+6. **Create Database Table:**
+   
+    Run the following SQL command to create table in the database:
+
+   ```sql
+  CREATE TABLE todo_item (
+    id UUID PRIMARY KEY,
+    title VARCHAR(255),
+    description TEXT,
+    due_date TIMESTAMP,
+    priority VARCHAR(50),
+    status VARCHAR(50),
+    recurring_type VARCHAR(50),
+    canceled BOOLEAN,
+    recurring BOOLEAN
+);
+   ```
+
+   
+7. **Configure Application:**
+
+   Update the `application.yml` file in the TodoTaskBackend project with the database connection details:
+
+   ```yaml
+   spring:
+     datasource:
+       url: jdbc:postgresql://localhost:5432/todo_db
+       username: todo_user
+       password: todopassword
+       driver-class-name: org.postgresql.Driver
+   ```
+
+   Adjust the URL, username, and password according to your PostgreSQL configuration.
 
 ## Usage
 
@@ -68,9 +146,9 @@ To use TodoTaskBackend, you can interact with its RESTful API endpoints. Here ar
 - **POST /api/todo/cancel/{id}: Cancel a task by ID.
 - **DELETE /api/todo/delete/{id}: Delete a task by ID.
 
-
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
 
 ---
+
