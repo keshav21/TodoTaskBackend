@@ -30,6 +30,7 @@ TodoTaskBackend is a RESTful API backend for managing todo tasks. It provides en
 Before you begin, ensure you have met the following requirements:
 - Java Development Kit (JDK) 17 or later installed.
 - Maven build tool installed.
+- Postgres Running and DB and table is created.
 - Docker installed (optional, for running with Docker).
 
 ## Getting Started
