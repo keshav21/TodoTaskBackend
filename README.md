@@ -9,8 +9,8 @@ This is the backend for the TodoTask application, built with [Java Spring Boot](
 - [Introduction](#introduction)
 - [Features](#features)
 - [Prerequisites](#prerequisites)
-- [Getting Started](#getting-started)
 - [Database Setup](#database-setup)
+- [Getting Started](#getting-started)
 - [Usage](#usage)
 - [Docker Deployment](#docker-deployment)
 - [License](#license)
@@ -33,33 +33,6 @@ Before you begin, ensure you have met the following requirements:
 - Postgres Running and DB and table is created.
 - Docker installed (optional, for running with Docker).
 
-## Getting Started
-
-To get started with TodoTaskBackend, follow these steps:
-
-1. Clone the repository:
-
-```bash
-git clone https://github.com/keshav21/TodoTaskBackend.git
-```
-
-2. Navigate to the project directory:
-
-```bash
-cd TodoTaskBackend
-```
-
-3. Build the project using Maven:
-
-```bash
-mvn clean package
-```
-
-4. Run the application:
-
-```bash
-java -jar target/todo-app-1.0.0-SNAPSHOT.jar
-```
 
 ## Database Setup
 
@@ -137,6 +110,35 @@ Follow these steps to set up the PostgreSQL database for TodoTaskBackend:
    ```
 
    Adjust the URL, username, and password according to your PostgreSQL configuration.
+
+   
+## Getting Started
+
+To get started with TodoTaskBackend, follow these steps:
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/keshav21/TodoTaskBackend.git
+```
+
+2. Navigate to the project directory:
+
+```bash
+cd TodoTaskBackend
+```
+
+3. Build the project using Maven:
+
+```bash
+mvn clean package
+```
+
+4. Run the application:
+
+```bash
+java -jar target/todo-app-1.0.0-SNAPSHOT.jar
+```
 
 ## Usage
 
