@@ -119,25 +119,25 @@ To get started with TodoTaskBackend, follow these steps:
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/keshav21/TodoTaskBackend.git
+  git clone https://github.com/keshav21/TodoTaskBackend.git
 ```
 
 2. Navigate to the project directory:
 
 ```bash
-cd TodoTaskBackend
+   cd TodoTaskBackend
 ```
 
 3. Build the project using Maven:
 
 ```bash
-mvn clean package
+   mvn clean package
 ```
 
 4. Run the application:
 
 ```bash
-java -jar target/todo-app-1.0.0-SNAPSHOT.jar
+   java -jar target/todo-app-1.0.0-SNAPSHOT.jar
 ```
 
 ## Usage
@@ -155,23 +155,23 @@ To use TodoTaskBackend, you can interact with its RESTful API endpoints. Here ar
 To deploy this application using Docker, follow these steps:
 
 1. Clone this repository:
-   ```
-git clone https://github.com/keshav21/TodoTaskBackend.git
+   ``` bash
+     git clone https://github.com/keshav21/TodoTaskBackend.git
    ```
 
 2. Navigate to the cloned directory:
-   ```
-cd TodoTaskBackend
+   ```bash
+      cd TodoTaskBackend
    ```
 
 3. Build the Docker image:
-   ```
-docker build -t todo-task-backend .
+   ```bash
+      docker build -t todo-task-backend .
    ```
 
 4. Run the Docker container:
-   ```
-docker run -p 8080:8080 todo-task-backend
+   ```bash
+     docker run -p 8080:8080 todo-task-backend
    ```
 
 ## Kubernetes Deployment
@@ -181,28 +181,24 @@ To deploy this application on Kubernetes, follow these steps:
 1. Ensure you have a Kubernetes cluster set up and `kubectl` configured.
 
 2. Clone this repository:
-   ```
-git clone https://github.com/keshav21/TodoTaskBackend.git
+   ```bash
+      git clone https://github.com/keshav21/TodoTaskBackend.git
    ```
 
 3. Navigate to the cloned directory:
-   ```
-cd TodoTaskBackend
-   ```
-
-4. Apply the Kubernetes deployment and service YAML files:
-   ```
-kubectl apply -f deployment.yaml
-kubectl apply -f service.yaml
+   ```bash
+    cd TodoTaskBackend
    ```
 
-5. Apply the Kubernetes Ingress YAML file (if using Ingress):
-   ```
-kubectl apply -f ingress.yaml
+4. Apply the Kubernetes deployment and service and Ingress YAML files:
+   ```bash
+     kubectl apply -f kubenetes-deployment.yaml
    ```
 
-6. Access the application using the appropriate URL.
+5. Access the application using the appropriate URL.
 
+```bash 
+   http://localhost:5000
 ```
 
 ## License
