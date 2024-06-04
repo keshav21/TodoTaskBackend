@@ -195,11 +195,7 @@ To deploy this application on Kubernetes, follow these steps:
      kubectl apply -f kubenetes-deployment.yaml
    ```
 
-5. Access the application using the appropriate URL.
-
-```bash 
-   http://localhost:5000
-```
+5. Access the application using the appropriate URL. 
 
 ## License
 
