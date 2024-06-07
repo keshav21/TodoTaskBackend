@@ -9,10 +9,11 @@ This is the backend for the TodoTask application, built with [Java Spring Boot](
 - [Introduction](#introduction)
 - [Features](#features)
 - [Prerequisites](#prerequisites)
-- [Getting Started](#getting-started)
 - [Database Setup](#database-setup)
+- [Getting Started](#getting-started)
 - [Usage](#usage)
 - [Docker Deployment](#docker-deployment)
+- [Kubernetes Deployment](#kubernetes-deployment)
 - [License](#license)
 
 ## Introduction
@@ -30,35 +31,9 @@ TodoTaskBackend is a RESTful API backend for managing todo tasks. It provides en
 Before you begin, ensure you have met the following requirements:
 - Java Development Kit (JDK) 17 or later installed.
 - Maven build tool installed.
+- Postgres Running and DB and table is created.
 - Docker installed (optional, for running with Docker).
 
-## Getting Started
-
-To get started with TodoTaskBackend, follow these steps:
-
-1. Clone the repository:
-
-```bash
-git clone https://github.com/keshav21/TodoTaskBackend.git
-```
-
-2. Navigate to the project directory:
-
-```bash
-cd TodoTaskBackend
-```
-
-3. Build the project using Maven:
-
-```bash
-mvn clean package
-```
-
-4. Run the application:
-
-```bash
-java -jar target/todo-app-1.0.0-SNAPSHOT.jar
-```
 
 ## Database Setup
 
@@ -137,6 +112,35 @@ Follow these steps to set up the PostgreSQL database for TodoTaskBackend:
 
    Adjust the URL, username, and password according to your PostgreSQL configuration.
 
+   
+## Getting Started
+
+To get started with TodoTaskBackend, follow these steps:
+
+1. Clone the repository:
+
+```bash
+  git clone https://github.com/keshav21/TodoTaskBackend.git
+```
+
+2. Navigate to the project directory:
+
+```bash
+   cd TodoTaskBackend
+```
+
+3. Build the project using Maven:
+
+```bash
+   mvn clean package
+```
+
+4. Run the application:
+
+```bash
+   java -jar target/todo-app-1.0.0-SNAPSHOT.jar
+```
+
 ## Usage
 
 To use TodoTaskBackend, you can interact with its RESTful API endpoints. Here are some example endpoints:
@@ -152,23 +156,23 @@ To use TodoTaskBackend, you can interact with its RESTful API endpoints. Here ar
 To deploy this application using Docker, follow these steps:
 
 1. Clone this repository:
-   ```
-git clone https://github.com/keshav21/TodoTaskBackend.git
+   ``` bash
+     git clone https://github.com/keshav21/TodoTaskBackend.git
    ```
 
 2. Navigate to the cloned directory:
-   ```
-cd TodoTaskBackend
+   ```bash
+      cd TodoTaskBackend
    ```
 
 3. Build the Docker image:
-   ```
-docker build -t todo-task-backend .
+   ```bash
+      docker build -t todo-task-backend .
    ```
 
 4. Run the Docker container:
-   ```
-docker run -p 8080:8080 todo-task-backend
+   ```bash
+     docker run -p 8080:8080 todo-task-backend
    ```
 
 ## Kubernetes Deployment
@@ -178,29 +182,21 @@ To deploy this application on Kubernetes, follow these steps:
 1. Ensure you have a Kubernetes cluster set up and `kubectl` configured.
 
 2. Clone this repository:
-   ```
-git clone https://github.com/keshav21/TodoTaskBackend.git
+   ```bash
+      git clone https://github.com/keshav21/TodoTaskBackend.git
    ```
 
 3. Navigate to the cloned directory:
-   ```
-cd TodoTaskBackend
-   ```
-
-4. Apply the Kubernetes deployment and service YAML files:
-   ```
-kubectl apply -f deployment.yaml
-kubectl apply -f service.yaml
+   ```bash
+    cd TodoTaskBackend
    ```
 
-5. Apply the Kubernetes Ingress YAML file (if using Ingress):
-   ```
-kubectl apply -f ingress.yaml
+4. Apply the Kubernetes deployment and service and Ingress YAML files:
+   ```bash
+     kubectl apply -f kubenetes-deployment.yaml
    ```
 
-6. Access the application using the appropriate URL.
-
-```
+5. Access the application using the appropriate URL. 
 
 ## License
 
